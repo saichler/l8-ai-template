@@ -11,5 +11,5 @@ fi
 REPO=$1
 PROJ=$2
 
-docker build --no-cache --platform=linux/amd64 -t $REPO/$PROJ-web:latest .
-docker push $REPO/$PROJ-web:latest
+docker build --no-cache --platform=linux/amd64 -t $REPO/$PROJ:latest .
+docker push $REPO/$PROJ:latest
