@@ -4,6 +4,7 @@ import (
 	"github.com/saichler/l8reflect/go/reflect/introspecting"
 	"github.com/saichler/l8services/go/services/manager"
 	"github.com/saichler/l8types/go/ifs"
+	"github.com/saichler/l8types/go/sec"
 	"github.com/saichler/l8types/go/types/l8sysconfig"
 	"github.com/saichler/l8utils/go/utils/logger"
 	"github.com/saichler/l8utils/go/utils/registry"
@@ -28,7 +29,7 @@ func CreateResources(alias string) ifs.IResources {
 
 	res.Set(registry.NewRegistry())
 
-	sec, err := ifs.LoadSecurityProvider(res)
+	sec, err := sec.LoadSecurityProvider(res)
 	if err != nil {
 		time.Sleep(time.Second * 10)
 		panic(err.Error())
